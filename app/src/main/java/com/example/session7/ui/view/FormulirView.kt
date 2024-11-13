@@ -88,4 +88,15 @@ fun FormulirView(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
 
+        TextField(
+            value = noHp,
+            onValueChange = { noHp = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("Nomor Handphone") },
+            placeholder = { Text("Masukkan Nomor Handphone Anda") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+
 
