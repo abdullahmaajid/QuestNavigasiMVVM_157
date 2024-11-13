@@ -77,4 +77,15 @@ fun FormulirView(
             }
         }
 
+        TextField(
+            value = email,
+            onValueChange = { email = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("Email") },
+            placeholder = { Text("Masukkan Email Anda") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+        )
+
 
