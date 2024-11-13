@@ -53,4 +53,28 @@ fun FormulirView(
         Text(text = "Biodata", fontWeight = FontWeight.Bold, fontSize = 20.sp)
         Spacer(modifier = Modifier.padding(20.dp))
 
+        TextField(
+            value = nama,
+            onValueChange = { nama = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("Nama") },
+            placeholder = { Text("Masukkan Nama Anda") }
+        )
+
+
+        // RadioButton for gender selection
+        Row(modifier = Modifier.fillMaxWidth()) {
+            pilihanJK.forEach { selectedGender ->
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = gender == selectedGender,
+                        onClick = { gender = selectedGender }
+                    )
+                }
+                Text(text = selectedGender)
+            }
+        }
+
 
