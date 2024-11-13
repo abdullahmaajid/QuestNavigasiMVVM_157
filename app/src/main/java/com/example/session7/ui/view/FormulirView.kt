@@ -44,3 +44,13 @@ fun FormulirView(
 
     var listdata: MutableList<String> = mutableListOf(nama, gender, alamat, email, nim)
 
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Biodata", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        Spacer(modifier = Modifier.padding(20.dp))
+
+
