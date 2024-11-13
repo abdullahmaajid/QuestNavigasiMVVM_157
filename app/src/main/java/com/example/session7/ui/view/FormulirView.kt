@@ -110,4 +110,14 @@ fun FormulirView(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
 
+        TextField(
+            value = alamat,
+            onValueChange = { alamat = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("Alamat") },
+            placeholder = { Text("Masukkan Alamat Anda") }
+        )
+
 
