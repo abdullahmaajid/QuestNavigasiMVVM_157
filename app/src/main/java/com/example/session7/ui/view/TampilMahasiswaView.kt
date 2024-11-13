@@ -9,3 +9,26 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.navigation.NavHostController
 import com.example.session7.model.Mahasiswa
+
+
+
+@Composable
+fun TampilMahasiswaView(
+    mhs: Mahasiswa,
+    navController: NavHostController
+) {
+    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        Button(onClick = { navController.popBackStack() }) {
+            Text("Back")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+
+        TampilData(judul = "Nama", isinya = mhs.nama)
+        TampilData(judul = "Jenis Kelamin", isinya = mhs.gender)
+        TampilData(judul = "Alamat", isinya = mhs.alamat)
+        TampilData(judul = "Email", isinya = mhs.email)
+        TampilData(judul = "Nomor Handphone", isinya = mhs.noHp)
+        TampilData(judul = "NIM", isinya = mhs.nim)
+    }
+}
