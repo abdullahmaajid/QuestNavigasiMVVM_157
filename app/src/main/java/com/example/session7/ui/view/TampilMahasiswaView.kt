@@ -32,3 +32,21 @@ fun TampilMahasiswaView(
         TampilData(judul = "NIM", isinya = mhs.nim)
     }
 }
+
+@Composable
+fun TampilData(
+    judul: String,
+    isinya: String
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(judul, modifier = Modifier.weight(1f))
+        Text(":", modifier = Modifier.weight(0.1f))
+        Text(isinya, modifier = Modifier.weight(2f))
+    }
+}
+
