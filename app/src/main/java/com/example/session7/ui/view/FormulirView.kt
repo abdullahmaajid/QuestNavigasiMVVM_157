@@ -1,7 +1,6 @@
 package com.example.session7.ui.view
 
 
-
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,11 +37,11 @@ fun FormulirView(
     var email by remember { mutableStateOf("") }
     var noHp by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
-    var nim by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }  // Add the NIM field
 
+    var listdata: MutableList<String> = mutableListOf(nama, gender, alamat, email, noHp, nim) // Include NIM in the list
 
-    var listdata: MutableList<String> = mutableListOf(nama, gender, alamat, email, nim)
 
     Column(
         modifier = modifier
@@ -50,7 +49,9 @@ fun FormulirView(
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Input fields and RadioButtons for gender selection
         Text(text = "Biodata", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+
         Spacer(modifier = Modifier.padding(20.dp))
 
         TextField(
@@ -63,8 +64,6 @@ fun FormulirView(
             placeholder = { Text("Masukkan Nama Anda") }
         )
 
-
-        // RadioButton for gender selection
         Row(modifier = Modifier.fillMaxWidth()) {
             pilihanJK.forEach { selectedGender ->
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -77,6 +76,7 @@ fun FormulirView(
             }
         }
 
+        // Remaining TextField inputs for email, noHp, alamat
         TextField(
             value = email,
             onValueChange = { email = it },
@@ -100,17 +100,6 @@ fun FormulirView(
         )
 
         TextField(
-            value = nim,
-            onValueChange = { nim = it },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(5.dp),
-            label = { Text("NIM") },
-            placeholder = { Text("Masukkan NIM Anda") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-        )
-
-        TextField(
             value = alamat,
             onValueChange = { alamat = it },
             modifier = Modifier
@@ -120,13 +109,26 @@ fun FormulirView(
             placeholder = { Text("Masukkan Alamat Anda") }
         )
 
+        // New TextField for NIM
+        TextField(
+            value = nim,
+            onValueChange = { nim = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("NIM") },
+            placeholder = { Text("Masukkan NIM Anda") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)  // Set keyboard type to number
+        )
+
         Button(
             onClick = {
                 listdata[0] = nama
                 listdata[1] = gender
                 listdata[2] = alamat
                 listdata[3] = email
-                listdata[4] = nim
+                listdata[4] = noHp
+                listdata[5] = nim  // Save NIM into the list
                 onClickButton(listdata)
             },
             modifier = Modifier.padding(vertical = 10.dp)
@@ -135,5 +137,4 @@ fun FormulirView(
         }
     }
 }
-
 

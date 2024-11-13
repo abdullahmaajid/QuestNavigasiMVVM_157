@@ -1,5 +1,4 @@
 package com.example.session7
-
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -17,11 +16,11 @@ import com.example.session7.ui.view.FormulirView
 import com.example.session7.ui.view.TampilMahasiswaView
 import com.example.session7.ui.viewmodel.MahasiswaViewModel
 
+
 enum class Halaman {
     Form,
     Data
 }
-
 @Composable
 fun Navigasi(
     modifier: Modifier = Modifier,
@@ -56,6 +55,7 @@ fun Navigasi(
                 )
             }
 
+
             composable(route = Halaman.Data.name) {
                 TampilMahasiswaView(
                     mhs = uiState,
@@ -65,5 +65,3 @@ fun Navigasi(
         }
     }
 }
-
-

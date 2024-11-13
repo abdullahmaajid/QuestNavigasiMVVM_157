@@ -1,5 +1,4 @@
 package com.example.session7.model
-
 import com.example.session7.R
 object DataJK {
     val isiJK = listOf(
