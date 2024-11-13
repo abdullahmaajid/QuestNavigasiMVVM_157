@@ -120,4 +120,20 @@ fun FormulirView(
             placeholder = { Text("Masukkan Alamat Anda") }
         )
 
+        Button(
+            onClick = {
+                listdata[0] = nama
+                listdata[1] = gender
+                listdata[2] = alamat
+                listdata[3] = email
+                listdata[4] = nim
+                onClickButton(listdata)
+            },
+            modifier = Modifier.padding(vertical = 10.dp)
+        ) {
+            Text("Simpan")
+        }
+    }
+}
+
 
