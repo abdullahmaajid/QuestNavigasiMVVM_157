@@ -28,4 +28,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@Composable
+fun FormulirView(
+    modifier: Modifier = Modifier,
+    pilihanJK: List<String>,
+    onClickButton: (MutableList<String>) -> Unit,
+) {
+    var nama by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var noHp by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }
+    var gender by remember { mutableStateOf("") }
+
+
+    var listdata: MutableList<String> = mutableListOf(nama, gender, alamat, email, nim)
 
