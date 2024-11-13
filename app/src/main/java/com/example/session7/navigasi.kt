@@ -38,4 +38,21 @@ fun Navigasi(
             modifier = modifier.padding(paddingValues),
             navController = navHost,
             startDestination = Halaman.Form.name
-        )
+        ) {
+
+
+            composable(route = Halaman.Form.name) {
+                val context = LocalContext.current
+
+
+                FormulirView(
+                    pilihanJK = DataJK.isiJK.map { id ->
+                        context.resources.getString(id)
+                    },
+                    onClickButton = { mahasiswaData ->
+                        viewModel.saveDataMahasiswa(mahasiswaData)
+                        navHost.navigate(Halaman.Data.name)
+                    }
+                )
+            }
+
