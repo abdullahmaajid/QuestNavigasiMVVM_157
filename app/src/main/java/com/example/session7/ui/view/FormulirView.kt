@@ -99,4 +99,15 @@ fun FormulirView(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
 
+        TextField(
+            value = nim,
+            onValueChange = { nim = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            label = { Text("NIM") },
+            placeholder = { Text("Masukkan NIM Anda") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+
 
