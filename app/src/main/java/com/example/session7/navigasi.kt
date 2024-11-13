@@ -16,3 +16,8 @@ import com.example.session7.model.DataJK
 import com.example.session7.ui.view.FormulirView
 import com.example.session7.ui.view.TampilMahasiswaView
 import com.example.session7.ui.viewmodel.MahasiswaViewModel
+
+enum class Halaman {
+    Form,
+    Data
+}
